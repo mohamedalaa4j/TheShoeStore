@@ -8,4 +8,6 @@
     <string name="password">Password</string>
     <string name="enter_your_password">Enter your password</string>
     <string name="new_account">New account</string>
+    <string name="welcome">Welcome</string>
+    <string name="this_app_shows_you_a_variety_of_shoes_n_check_it_s_awsome_features">This app shows you a variety of shoes\n Check it\'s awesome features!</string>
 </resources>
