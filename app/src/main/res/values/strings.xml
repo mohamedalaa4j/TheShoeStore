@@ -10,4 +10,8 @@
     <string name="new_account">New account</string>
     <string name="welcome">Welcome</string>
     <string name="this_app_shows_you_a_variety_of_shoes_n_check_it_s_awsome_features">This app shows you a variety of shoes\n Check it\'s awesome features!</string>
+    <string name="next">Next</string>
+    <string name="tips_and_tricks">Tips and Tricks</string>
+    <string name="you_can_click_the_add_button_to_add_a_desired_model">You can click the add button to add a desired model</string>
+    <string name="okey">Okey</string>
 </resources>
