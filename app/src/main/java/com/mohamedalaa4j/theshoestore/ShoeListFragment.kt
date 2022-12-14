@@ -1,12 +1,12 @@
 package com.mohamedalaa4j.theshoestore
 
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
+import androidx.core.view.MenuProvider
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import androidx.navigation.fragment.findNavController
 import com.mohamedalaa4j.theshoestore.databinding.FragmentShoeListBinding
 import com.mohamedalaa4j.theshoestore.databinding.ItemBinding
 
@@ -20,6 +20,19 @@ class ShoeListFragment : Fragment() {
 
         setupShoesListView(sharedViewModel.shoesList.value!!)
 
+        activity?.addMenuProvider(object : MenuProvider {
+            override fun onCreateMenu(menu: Menu, menuInflater: MenuInflater) {
+                menuInflater.inflate(R.menu.logout_menu, menu)
+            }
+
+            override fun onMenuItemSelected(menuItem: MenuItem): Boolean {
+                when (menuItem.itemId) {
+                    R.id.loginFragment -> findNavController().navigate(ShoeListFragmentDirections.actionShoeListFragmentToLoginFragment())
+                }
+                return true
+            }
+
+        })
         return binding.root
     }
 
@@ -35,5 +48,6 @@ class ShoeListFragment : Fragment() {
             binding.linearLayout.addView(shoeView.root)
         }
     }
+
 
 }
