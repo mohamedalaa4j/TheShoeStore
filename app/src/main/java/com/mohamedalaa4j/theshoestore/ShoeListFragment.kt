@@ -13,6 +13,8 @@ import com.mohamedalaa4j.theshoestore.databinding.ItemBinding
 
 class ShoeListFragment : Fragment() {
     private lateinit var binding: FragmentShoeListBinding
+
+    //activityViewModels used so that the ViewModel aware of the hosted activity lifecycle
     private val sharedViewModel: ShoeListViewModel by activityViewModels()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
@@ -21,6 +23,7 @@ class ShoeListFragment : Fragment() {
 
         setupShoesListView(sharedViewModel.shoesList.value!!)
 
+        //region Logout menu
         requireActivity().addMenuProvider(object : MenuProvider {
             override fun onCreateMenu(menu: Menu, menuInflater: MenuInflater) {
                 menuInflater.inflate(R.menu.logout_menu, menu)
@@ -34,6 +37,7 @@ class ShoeListFragment : Fragment() {
             }
 
         },viewLifecycleOwner, Lifecycle.State.RESUMED)
+        //endregion
 
         binding.fab.setOnClickListener {
             findNavController().navigate(ShoeListFragmentDirections.actionShoeListFragmentToNewShoeDetailFragment())
