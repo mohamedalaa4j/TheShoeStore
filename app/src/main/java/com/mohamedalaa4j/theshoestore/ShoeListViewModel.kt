@@ -24,4 +24,8 @@ class ShoeListViewModel:ViewModel() {
         _shoesList.value = list
     }
 
+    fun addShoe(name:String,size:Double,company:String,description:String){
+        list.add(Shoe(name,size,company,description))
+        _shoesList.value = list
+    }
 }

@@ -20,11 +20,13 @@ class MainActivity : AppCompatActivity() {
 
         navController = findNavController(R.id.myNavHostFragment)
 
+        // Hide backButton in actionBar in those destinations
         appBarConfiguration = AppBarConfiguration(
             setOf(
                 R.id.loginFragment,
                 R.id.welcomeFragment,
-                R.id.instructionFragment
+                R.id.instructionFragment,
+                R.id.shoeListFragment
             )
         )
 

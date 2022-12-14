@@ -43,5 +43,19 @@
         <action
             android:id="@+id/action_shoeListFragment_to_loginFragment"
             app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_shoeListFragment_to_newShoeDetailFragment"
+            app:destination="@id/newShoeDetailFragment"
+            app:popUpTo="@id/shoeListFragment"
+            app:popUpToInclusive="false" />
+    </fragment>
+    <fragment
+        android:id="@+id/newShoeDetailFragment"
+        android:name="com.mohamedalaa4j.theshoestore.NewShoeDetailFragment"
+        android:label="fragment_new_shoe_detail"
+        tools:layout="@layout/fragment_new_shoe_detail" >
+        <action
+            android:id="@+id/action_newShoeDetailFragment_to_shoeListFragment"
+            app:destination="@id/shoeListFragment" />
     </fragment>
 </navigation>

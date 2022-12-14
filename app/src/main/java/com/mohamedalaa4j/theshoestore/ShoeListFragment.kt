@@ -6,6 +6,7 @@ import androidx.core.view.MenuProvider
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.Lifecycle
 import androidx.navigation.fragment.findNavController
 import com.mohamedalaa4j.theshoestore.databinding.FragmentShoeListBinding
 import com.mohamedalaa4j.theshoestore.databinding.ItemBinding
@@ -20,7 +21,7 @@ class ShoeListFragment : Fragment() {
 
         setupShoesListView(sharedViewModel.shoesList.value!!)
 
-        activity?.addMenuProvider(object : MenuProvider {
+        requireActivity().addMenuProvider(object : MenuProvider {
             override fun onCreateMenu(menu: Menu, menuInflater: MenuInflater) {
                 menuInflater.inflate(R.menu.logout_menu, menu)
             }
@@ -32,7 +33,12 @@ class ShoeListFragment : Fragment() {
                 return true
             }
 
-        })
+        },viewLifecycleOwner, Lifecycle.State.RESUMED)
+
+        binding.fab.setOnClickListener {
+            findNavController().navigate(ShoeListFragmentDirections.actionShoeListFragmentToNewShoeDetailFragment())
+        }
+
         return binding.root
     }
 
