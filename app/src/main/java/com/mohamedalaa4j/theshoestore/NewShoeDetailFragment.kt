@@ -24,15 +24,11 @@ class NewShoeDetailFragment : Fragment() {
         // Inflate the layout for this fragment
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_new_shoe_detail, container, false)
 
+        binding.shoeListViewModel = sharedViewModel
+
         binding.btnAdd.setOnClickListener {
             if (fieldsIsNotEmpty()) {
-                sharedViewModel.addShoe(
-                    binding.etName.text.toString(),
-                    binding.etSize.text.toString().toDouble(),
-                    binding.etCompanyName.text.toString(),
-                    binding.etDescription.text.toString(),
-                )
-
+                sharedViewModel.addShoe()
                 findNavController().navigate(NewShoeDetailFragmentDirections.actionNewShoeDetailFragmentToShoeListFragment())
             } else {
                 Toast.makeText(context, "Please enter the shoe details", Toast.LENGTH_SHORT).show()

@@ -11,6 +11,11 @@ class ShoeListViewModel:ViewModel() {
     private val _shoesList = MutableLiveData<ArrayList<Shoe>>()
     val shoesList : LiveData<ArrayList<Shoe>> get() = _shoesList
 
+     val name = MutableLiveData<String>()
+     val size = MutableLiveData<Double>()
+     val companyName = MutableLiveData<String>()
+     val description  = MutableLiveData<String>()
+
     init {
         list.add(Shoe("Flat Heels",37.5,"ALDO","ALDO SHOES - FLAT HEELS-for Men-NAVY-8 16086395"))
         list.add(Shoe("Lace-Up Flat Sneakers",38.0,"Desert","Comfortable LEATHER upper material classic lace-up closure Soft footbed ensures all-day comfort Sturdy PVC outsole offers added comfort"))
@@ -24,8 +29,8 @@ class ShoeListViewModel:ViewModel() {
         _shoesList.value = list
     }
 
-    fun addShoe(name:String,size:Double,company:String,description:String){
-        list.add(Shoe(name,size,company,description))
+    fun addShoe(){
+        list.add(Shoe(name.value!!,size.value!!,companyName.value!!, description.value!!))
         _shoesList.value = list
     }
 }

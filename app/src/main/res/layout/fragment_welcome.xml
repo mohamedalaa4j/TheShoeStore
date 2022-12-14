@@ -2,8 +2,7 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <!--LinearLayout is used because it a simple layout with vertical orientated children-->
-
+    <!-- LinearLayout is used because it is a simple layout with vertical orientated children-->
     <LinearLayout xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

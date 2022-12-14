@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout>
+
+    <data>
+        <import type="com.mohamedalaa4j.theshoestore.DoubleConverter"/>
+        <variable
+            name="ShoeListViewModel"
+            type="com.mohamedalaa4j.theshoestore.ShoeListViewModel"/>
+    </data>
+    <!-- LinearLayout is used because it is a simple layout with vertical orientated children-->
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
@@ -23,6 +31,7 @@
             android:layout_height="wrap_content"
             android:hint="@string/enter_shoe_name"
             android:inputType="text"
+            android:text="@={ShoeListViewModel.name}"
             android:textColorHint="@color/dark_blue" />
 
         <TextView
@@ -39,6 +48,7 @@
             android:layout_height="wrap_content"
             android:hint="@string/enter_shoe_name"
             android:inputType="number"
+            android:text="@={DoubleConverter.doubleToString(ShoeListViewModel.size)}"
             android:textColorHint="@color/dark_blue" />
 
         <TextView
@@ -55,6 +65,7 @@
             android:layout_height="wrap_content"
             android:hint="@string/enter_shoe_company_name"
             android:inputType="text"
+            android:text="@={ShoeListViewModel.companyName}"
             android:textColorHint="@color/dark_blue" />
 
         <TextView
@@ -71,6 +82,7 @@
             android:layout_height="wrap_content"
             android:hint="@string/enter_shoe_description"
             android:inputType="text"
+            android:text="@={ShoeListViewModel.description}"
             android:textColorHint="@color/dark_blue" />
 
         <Button
