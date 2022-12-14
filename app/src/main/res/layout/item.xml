@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
     <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingBottom="2dp"
-        >
+        android:paddingBottom="2dp">
 
         <ImageView
             android:id="@+id/iv"
             android:layout_width="120dp"
             android:layout_height="120dp"
-            android:src="@drawable/ic_launcher_background"
-            app:layout_constraintStart_toStartOf="parent"
+            android:src="@drawable/puma"
             app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
@@ -20,6 +20,7 @@
             style="@style/textStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
             app:layout_constraintBottom_toTopOf="@id/tvSize"
             app:layout_constraintStart_toEndOf="@id/iv"
             app:layout_constraintTop_toTopOf="@id/iv" />
@@ -29,6 +30,7 @@
             style="@style/textStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
             app:layout_constraintBottom_toTopOf="@id/tvCompany"
             app:layout_constraintStart_toEndOf="@id/iv"
             app:layout_constraintTop_toBottomOf="@id/tvName" />
@@ -38,6 +40,7 @@
             style="@style/textStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
             app:layout_constraintBottom_toTopOf="@id/tvDescription"
             app:layout_constraintStart_toEndOf="@id/iv"
             app:layout_constraintTop_toBottomOf="@id/tvSize" />
@@ -45,11 +48,23 @@
         <TextView
             android:id="@+id/tvDescription"
             style="@style/textStyle"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
             app:layout_constraintBottom_toBottomOf="@id/iv"
             app:layout_constraintStart_toEndOf="@id/iv"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tvCompany" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:background="@color/light_gray"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvDescription" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
